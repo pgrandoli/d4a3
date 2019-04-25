@@ -5,5 +5,6 @@ if (!$enlace) {
 }
 echo 'Conectado satisfactoriamente';
 mysql_close($enlace);
+echo "<br>EDSI";
 ?>
 
