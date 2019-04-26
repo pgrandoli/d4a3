@@ -13,9 +13,7 @@ pipeline{
 		}
 			stage('Build image'){
 				steps{
-				sh 'sudo docker build --tag=phpp .'
-				
-				
+				sh 'sudo docker build --tag=phpp .'	
 			}
 		}
 			stage('Deploy Container'){
