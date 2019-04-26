@@ -15,7 +15,7 @@ pipeline{
 				steps{
 				sudo docker run 81b89a3d84b0
 				cp /home/backup/d4a/code/*.* /var/www/html/
-				sudo docker build --tag=php .
+				sudo docker build --tag=php
 				
 			}
 		}
