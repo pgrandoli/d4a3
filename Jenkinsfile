@@ -13,9 +13,9 @@ pipeline{
 		}
 			stage('Build image'){
 				steps{
-				sudo docker run 81b89a3d84b0
-				cp /home/backup/d4a/code/*.* /var/www/html/
-				sudo docker build --tag=php
+				sudo docker build - < /home/backup/php54/Dockerfile
+				sudo docker cp /home/backup/d4a/code/index.php 74bea10c3595:/var/www/html
+				sudo docker cp /home/backup/d4a/code/db.php 74bea10c3595:/var/www/html
 				
 			}
 		}
