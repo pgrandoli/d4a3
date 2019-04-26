@@ -1,4 +1,8 @@
 pipeline{
+	environment{
+		registry = "pgrandoli/d4a3"
+		registryCredential = "dockerhub"
+	}
 	agent any
 	stages{
 			stage('Starting'){
@@ -13,7 +17,9 @@ pipeline{
 		}
 			stage('Build image'){
 				steps{
-				sh 'sudo docker build --tag=phpp .'	
+					script{
+						dockerImage=docker.build registry + ":$BUILD_NUMBER"
+					}	
 			}
 		}
 			stage('Deploy Container'){
