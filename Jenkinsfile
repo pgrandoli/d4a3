@@ -22,9 +22,12 @@ pipeline{
 					}	
 			}
 		}
-			stage('Deploy Container'){
+			stage('Push Docker Image'){
 				steps{
-				sh 'echo'	
+					script{
+                                                docker.withRegistry('',registryCredential'){dockerImage.push()}
+                                        }
+
 			}
 		}
 	}
