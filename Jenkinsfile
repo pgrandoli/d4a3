@@ -21,7 +21,7 @@ pipeline{
 		}
 			stage('Deploy Container'){
 				steps{
-					
+				sh 'echo'	
 			}
 		}
 	}
